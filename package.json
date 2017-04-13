@@ -4,7 +4,7 @@
   "scripts": {
     "dev:server": "live-server",
     "dev:sass": "node-sass source/scss/styles.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
-    "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
+    "build":"node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
     "dev": "run-p dev:*",
     "deploy:surge": "surge --project . --domain sassy-project.surge.sh",
     "deploy": "run-s build:* deploy:surge"
