@@ -8,10 +8,10 @@
     "dev": "run-p dev:*",
     "deploy:surge": "surge --project . --domain https://qassisju-kg-tgc7noax99ajvzzg.surge.sh/",
     "deploy": "run-s build:* deploy:surge",
-    "build:htmllint": "htmlhint",
-    "build:stylecheck": "stylelint 'source/scss/style.scss'",
-    "build:javalint": "standard",
-    "build": "run-p build:*"
+    "lint:htmllint": "htmlhint",
+    "lint:stylecheck": "stylelint 'source/scss/style.scss'",
+    "lint:javalint": "standard",
+    "lint": "run-p lint:*"
   },
   "stylelint": {
     "extends": "stylelint-config-standard"
