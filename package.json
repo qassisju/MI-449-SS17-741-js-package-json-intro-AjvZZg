@@ -5,15 +5,25 @@
     "dev:server": "live-server",
     "dev:sass": "node-sass source/scss/styles.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
     "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
-    "build": "run-s build:sass",
     "dev": "run-p dev:*",
     "deploy:surge": "surge --project . --domain https://qassisju-kg-tgc7noax99ajvzzg.surge.sh/",
-    "deploy": "run-s build:* deploy:surge"
+    "deploy": "run-s build:* deploy:surge",
+    "build:htmllint": "htmlhint",
+    "build:stylecheck": "stylelint 'source/scss/style.scss'",
+    "build:javalint": "standard",
+    "build": "run-p build:*"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
   },
   "devDependencies": {
+    "htmlhint": "^0.9.13",
     "live-server": "^1.2.0",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
+    "standard": "^10.0.2",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0",
     "surge": "^0.19.0"
   }
 }
